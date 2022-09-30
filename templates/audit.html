@@ -1,0 +1,452 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Audit the wealth
+{% endblock title %}
+
+{% block body %}
+<center>
+    <h4>Asset calculation</h4>
+</center>
+<center>
+    <h6>powered by Astronx Finance Limited</h6>
+</center>
+<div class="container p-5">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="container m-3">
+            <center>
+                <h5>Stocks Portfolio</h5>
+            </center>
+            <div class="row m-2">
+                <div class="col-3">
+                    <center>Name of the stock</center>
+                </div>
+                <div class="col-3">
+                    <center>buying price</center>
+                </div>
+                <div class="col-3">
+                    <center>amount of stocks</center>
+                </div>
+                <div class="col-3">
+                    <center>current value</center>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <input type="text" class="form-control" value="" name="stnm1">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp1">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam1">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp1">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <input type="text" class="form-control" value="" name="stnm2">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp2">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam2">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp2">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                 <input type="text" class="form-control" value="" name="stnm3">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp3">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam3">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp3">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <input type="text" class="form-control" value="" name="stnm4">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp4">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam4">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp4">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <input type="text" class="form-control" value="" name="stnm5">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp5">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam5">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp5">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <input type="text" class="form-control" value="" name="stnm6">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp6">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam6">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp6">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <input type="text" class="form-control" value="" name="stnm7">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp7">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam7">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp7">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <input type="text" class="form-control" value="" name="stnm8">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp8">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam8">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp8">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <input type="text" class="form-control" value="" name="stnm9">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp9">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam9">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp9">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-3">
+                    <input type="text" class="form-control" value="" name="stnm10">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stbp10">
+                </div>
+                <div class="col-3">
+                    <input  type="number" class="form-control" value=0 name="stam10">
+                </div>
+                <div class="col-3">
+                    <input  type="number" step="any"  class="form-control" value=0 name="stcp10">
+                </div>
+            </div>
+        </div>
+        <div class="container m-3">
+            <center>
+                <h5>Mutual fund portfolio</h5>
+            </center>
+            <div class="row m-2">
+                <div class="col-4">
+                    <center>Name of the fund</center>
+                </div>
+                <div class="col-4">
+                    <center> invested amount</center>
+                </div>
+                <div class="col-4">
+                    <center>current amount</center>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="mfnm1">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfia1">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfca1">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="mfnm2">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfia2">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfca2">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="mfnm3">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfia3">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfca3">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="mfnm4">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfia4">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfca4">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="mfnm5">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfia5">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="mfca5">
+                </div>
+            </div>
+        </div>
+        <div class="container m-3">
+            <center>
+                <h5>Cryptocurrency portfolio</h5>
+            </center>
+            <div class="row m-2">
+                <div class="col-4">
+                    <center>Name of the crypto</center>
+                </div>
+                <div class="col-4">
+                    <center> invested amount</center>
+                </div>
+                <div class="col-4">
+                    <center>current amount</center>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="cynm1">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyia1">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyca1">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="cynm2">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyia2">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyca2">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="cynm3">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyia3">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyca3">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="cynm4">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyia4">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyca4">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-4">
+                    <input type="text" class="form-control" value="" name="cynm5">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyia5">
+                </div>
+                <div class="col-4">
+                    <input  type="number" step="any"  class="form-control" value=0 name="cyca5">
+                </div>
+            </div>
+        </div>
+        <div class="container m-3">
+            <center>
+                <h5>Bank Balance</h5>
+            </center>
+            <div class="row m-2">
+                <div class="col-6">
+                    <center>Name of the Bank</center>
+                </div>
+                <div class="col-6">
+                    <center> Balance</center>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" value="" name="bnnm1">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="bnbl1">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" value="" name="bnnm2">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="bnbl2">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" value="" name="bnnm3">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="bnbl3">
+                </div>
+            </div>
+        </div>
+        <div class="container m-3">
+            <div class="row m-2">
+                <div class="col-6">
+                    <center>Cash in Hand</center>
+                </div>
+                <div class="col-6">
+                    <center>Demat account Balance</center>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="csbl">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="dmbl">
+                </div>
+            </div>
+        </div>
+        <div class="container m-3">
+            <center>
+                <h5>money Borrow</h5>
+            </center>
+            <div class="row m-2">
+                <div class="col-6">
+                    <center>Name of the person</center>
+                </div>
+                <div class="col-6">
+                    <center>amount borrow</center>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" value="" name="brnm1">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="bram1">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" value="" name="brnm2">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="bram2">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" value="" name="brnm3">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="bram3">
+                </div>
+            </div>
+        </div>
+        <div class="container m-3">
+            <center>
+                <h5>money lend</h5>
+            </center>
+            <div class="row m-2">
+                <div class="col-6">
+                    <center>Name of the person</center>
+                </div>
+                <div class="col-6">
+                    <center>amount lend</center>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" value="" name="lnnm1">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="lnam1">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" value="" name="lnnm2">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="lnam2">
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-6">
+                    <input type="text" class="form-control" value="" name="lnnm3">
+                </div>
+                <div class="col-6">
+                    <input  type="number" step="any"  class="form-control" value=0 name="lnam3">
+                </div>
+            </div>
+        </div>
+        <center><button type="submit" class="btn btn-success p-2 m-3"> Submit the Data</button></center>
+        <!--here the nomaclature is 5 letter word where 1st 2 letter is st ,mf,cy,ln,br,nf,dm,hn,bn-->
+
+    </form>
+</div>
+{% endblock body %}

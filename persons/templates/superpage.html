@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+superuser administration
+{% endblock title %}
+
+{% block body %}
+<center><h4>Administrative Control</h4></center>
+<div class="container">
+  {% if messages %}
+            {% for i in messages %}
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <div>
+                    <center>{{i}}</center>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+    <table class="table m-3">
+        <a href="{% url 'index' %}"><button class="btn btn-success m-2">homepage</button> </a>
+        <thead>
+          <tr>
+            <th scope="col">Sl. no.</th>
+            <th scope="col">Timestand</th>
+            <th scope="col">Total Investment</th>
+            <th scope="col">Total return</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in dataline %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.created}}</td>
+            <td>{{i.total_investment}}</td>
+            <td>{{i.total_return}}</td>
+            <td><a href="{% url 'edit' i.pk %}"><button class="btn btn-success">edit</button></a></td>
+            <td><a href="{% url 'delete' i.pk %}"><button class="btn btn-danger">delete</button></a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock body %}
+

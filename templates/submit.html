@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}submitted successfully{% endblock title %}
+{% block body %}
+<center><h5>your data is submitted successfully</h5><br></center>
+<br>
+<div class="container">
+    <center>
+        <img src="{% static 'images/tick.gif' %}" alt="..." class="img-thumbnail">
+    </center>
+</br>
+    <center>
+        the Overall Investment is : {{ttin}} rupees<br>
+        your net worth is : {{ ttrt }} rupees
+    </center>
+</div>
+<br>
+<center><a href="{% url 'index' %}"><button class="btn btn-success">go back to homepage</button> </a></center>
+{% endblock body %}

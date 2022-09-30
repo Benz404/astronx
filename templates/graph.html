@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}graph{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="col">
+        <center><h3>Growth of Stocks Investment return</h3></center>
+        <canvas id="myChart1" width="500" height="100"></canvas>
+        <br>
+        <center><h3>Growth of Mutual Fund Investment return</h3></center>
+        <canvas id="myChart2" width="500" height="100"></canvas>
+        <br>
+        <center><h3>Growth of Cryptocurrency return</h3></center>
+        <canvas id="myChart3" width="500" height="100"></canvas>
+        <br>
+        <center><h3>Growth of bank balance</h3></center>
+        <canvas id="myChart4" width="500" height="100"></canvas>
+        <br>
+        <center><h3>Growth of Total Profit</h3></center>
+        <canvas id="myChart5" width="500" height="100"></canvas>
+        <br>
+        <center><h3>Growth of Net Worth</h3></center>
+        <canvas id="myChart6" width="500" height="100"></canvas>
+    </div>
+</div>
+
+<script>
+    const ctx1= document.getElementById('myChart1').getContext('2d');
+    const myChart1 = new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: [{% for i in dataline %} '{{i.created}}', {% endfor %}],
+    datasets: [{
+        label: 'Total stocks Profit',
+        data: [{% for i in dataline %} {{ i.total_stock_profit }}, {% endfor %}],
+        backgroundColor: [
+            'rgba(0, 255, 0, 1)',
+        ],
+            borderColor: [
+                'rgba(0, 255, 0, 1)',
+            ],
+                borderWidth: 0.5
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+    const ctx2 = document.getElementById('myChart2').getContext('2d');
+    const myChart2 = new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: [{% for i in dataline %} '{{ i.created}}', {% endfor %}],
+    datasets: [{
+        label: 'Total mutual fund Profit',
+        data: [{% for i in dataline %} {{ i.total_Mutual_fund_profit }}, {% endfor %}],
+        backgroundColor: [
+            'rgba(0, 255, 0, 1)',
+        ],
+            borderColor: [
+                'rgba(0,255,0, 1)',
+            ],
+                borderWidth: 0.5
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+const ctx3= document.getElementById('myChart3').getContext('2d');
+    const myChart3 = new Chart(ctx3, {
+        type: 'line',
+        data: {
+            labels: [{% for i in dataline %} '{{i.created}}', {% endfor %}],
+    datasets: [{
+        label: 'Total crypto Profit',
+        data: [{% for i in dataline %} {{ i.total_crypto_profit }}, {% endfor %}],
+        backgroundColor: [
+            'rgba(0, 255, 0, 1)',
+        ],
+            borderColor: [
+                'rgba(0, 255, 0, 1)',
+            ],
+                borderWidth: 0.5
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+const ctx4= document.getElementById('myChart4').getContext('2d');
+    const myChart4 = new Chart(ctx4, {
+        type: 'line',
+        data: {
+            labels: [{% for i in dataline %} '{{i.created}}', {% endfor %}],
+    datasets: [{
+        label: 'Total bank balance',
+        data: [{% for i in dataline %} {{ i.total_bank_balance }}, {% endfor %}],
+        backgroundColor: [
+            'rgba(0, 255, 0, 1)',
+        ],
+            borderColor: [
+                'rgba(0, 255, 0, 1)',
+            ],
+                borderWidth: 0.5
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+const ctx5= document.getElementById('myChart5').getContext('2d');
+    const myChart5 = new Chart(ctx5, {
+        type: 'line',
+        data: {
+            labels: [{% for i in dataline %} '{{i.created}}', {% endfor %}],
+    datasets: [{
+        label: 'Total bank balance',
+        data: [{% for i in dataline %} {{ i.total_profit }}, {% endfor %}],
+        backgroundColor: [
+            'rgba(0, 255, 0, 1)',
+        ],
+            borderColor: [
+                'rgba(0, 255, 0, 1)',
+            ],
+                borderWidth: 0.5
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+const ctx6= document.getElementById('myChart6').getContext('2d');
+    const myChart6 = new Chart(ctx6, {
+        type: 'line',
+        data: {
+            labels: [{% for i in dataline %} '{{i.created}}', {% endfor %}],
+    datasets: [{
+        label: 'Total bank balance',
+        data: [{% for i in dataline %} {{ i.total_return }}, {% endfor %}],
+        backgroundColor: [
+            'rgba(0, 255, 0, 1)',
+        ],
+            borderColor: [
+                'rgba(0, 255, 0, 1)',
+            ],
+                borderWidth: 0.5
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+{% endblock body %}

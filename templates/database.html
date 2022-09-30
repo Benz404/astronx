@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Whole database
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <table class="table m-3">
+        <a href="{% url 'index' %}"><button class="btn btn-success m-2">homepage</button> </a>
+        <thead>
+          <tr>
+            <th scope="col">Sl. no.</th>
+            <th scope="col">Timestand</th>
+            <th scope="col">Total Investment</th>
+            <th scope="col">Total return</th>
+            <th scope="col">Report</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in dataline %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.created}}</td>
+            <td>{{i.total_investment}}</td>
+            <td>{{i.total_return}}</td>
+            <td><a href="{% url 'detail' i.pk %}"><button class="btn btn-primary">open</button></a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock body %}

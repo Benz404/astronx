@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+datails of {{data.created}}
+{% endblock title %}
+{% block body %}
+<style>
+    #signature {
+        float: right;
+        height: 180px;
+        width: 180px;
+    }
+
+    #total {
+        float: left;
+    }
+</style>
+<div class="container p-3">
+    <a href="{% url 'database' %}"><button class="btn btn-success m-2">back</button></a>
+    <p>Data report is created on: <br>{{data.created}}</p>
+    <p>Data report is last updated on: <br>{{data.updated}}</p>
+</div>
+<div class="container">
+    <h5>Investment on stocks</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sl no.</th>
+                <th scope="col">name of the stocks</th>
+                <th scope="col">buy price</th>
+                <th scope="col">amount hold</th>
+                <th scope="col">current price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <center>
+                <tr>
+                    <td>1</td>
+                    <td>{{data.st_name_1}}</td>
+                    <td>{{data.st_buy_price_1}}</td>
+                    <td>{{data.st_amount_1}}</td>
+                    <td>{{data.st_current_price_1}}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>{{data.st_name_2}}</td>
+                    <td>{{data.st_buy_price_2}}</td>
+                    <td>{{data.st_amount_2}}</td>
+                    <td>{{data.st_current_price_2}}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>{{data.st_name_3}}</td>
+                    <td>{{data.st_buy_price_3}}</td>
+                    <td>{{data.st_amount_3}}</td>
+                    <td>{{data.st_current_price_3}}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>{{data.st_name_4}}</td>
+                    <td>{{data.st_buy_price_4}}</td>
+                    <td>{{data.st_amount_4}}</td>
+                    <td>{{data.st_current_price_4}}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>{{data.st_name_5}}</td>
+                    <td>{{data.st_buy_price_5}}</td>
+                    <td>{{data.st_amount_5}}</td>
+                    <td>{{data.st_current_price_5}}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>{{data.st_name_6}}</td>
+                    <td>{{data.st_buy_price_6}}</td>
+                    <td>{{data.st_amount_6}}</td>
+                    <td>{{data.st_current_price_6}}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>{{data.st_name_7}}</td>
+                    <td>{{data.st_buy_price_7}}</td>
+                    <td>{{data.st_amount_7}}</td>
+                    <td>{{data.st_current_price_7}}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>{{data.st_name_8}}</td>
+                    <td>{{data.st_buy_price_8}}</td>
+                    <td>{{data.st_amount_8}}</td>
+                    <td>{{data.st_current_price_8}}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>{{data.st_name_9}}</td>
+                    <td>{{data.st_buy_price_9}}</td>
+                    <td>{{data.st_amount_9}}</td>
+                    <td>{{data.st_current_price_9}}</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>{{data.st_name_10}}</td>
+                    <td>{{data.st_buy_price_10}}</td>
+                    <td>{{data.st_amount_10}}</td>
+                    <td>{{data.st_current_price_10}}</td>
+                </tr>
+            </center>
+        </tbody>
+    </table>
+    <small>
+        <p>Total stock investment : {{data.total_stock_investment}} rupees</p>
+        <p>Total stock return : {{data.total_stock_return}} rupees</p>
+    </small>
+</div>
+<br>
+<div class="container">
+    <h5>Investment on mutual fund</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sl no.</th>
+                <th scope="col">name of the mutual fund</th>
+                <th scope="col">investment amount</th>
+                <th scope="col">current amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{data.mf_name_1}}</td>
+                <td>{{data.mf_invested_1}}</td>
+                <td>{{data.mf_current_1}}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>{{data.mf_name_2}}</td>
+                <td>{{data.mf_invested_2}}</td>
+                <td>{{data.mf_current_2}}</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>{{data.mf_name_3}}</td>
+                <td>{{data.mf_invested_3}}</td>
+                <td>{{data.mf_current_3}}</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>{{data.mf_name_4}}</td>
+                <td>{{data.mf_invested_4}}</td>
+                <td>{{data.mf_current_4}}</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>{{data.mf_name_5}}</td>
+                <td>{{data.mf_invested_5}}</td>
+                <td>{{data.mf_current_5}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <small>
+        <p>Total mutual fund investment : {{data.total_Mutual_fund_investment}} rupees</p>
+        <p>Total mutual fund return : {{data.total_Mutual_fund_return}} rupees</p>
+    </small>
+</div>
+<br>
+<div class="container">
+    <h5>Investment on cryptocurency</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sl no.</th>
+                <th scope="col">name of the cryptocurency</th>
+                <th scope="col">investment amount</th>
+                <th scope="col">current amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{data.cy_name_1}}</td>
+                <td>{{data.cy_invested_1}}</td>
+                <td>{{data.cy_current_1}}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>{{data.cy_name_2}}</td>
+                <td>{{data.cy_invested_2}}</td>
+                <td>{{data.cy_current_2}}</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>{{data.cy_name_3}}</td>
+                <td>{{data.cy_invested_3}}</td>
+                <td>{{data.cy_current_3}}</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>{{data.cy_name_4}}</td>
+                <td>{{data.cy_invested_4}}</td>
+                <td>{{data.cy_current_4}}</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>{{data.cy_name_5}}</td>
+                <td>{{data.cy_invested_5}}</td>
+                <td>{{data.cy_current_5}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <small>
+        <p>Total cryptocurency investment : {{data.total_crypto_investment}} rupees</p>
+        <p>Total cryptocurency return : {{data.total_crypto_return}} rupees</p>
+    </small>
+</div>
+<br>
+<div class="container">
+    <h5>Lender's & borrower's list</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sl no.</th>
+                <th scope="col">name of the person</th>
+                <th scope="col">lended amount</th>
+                <th scope="col">name of the person</th>
+                <th scope="col">borrowed amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{data.person_name_lend_1}}</td>
+                <td>{{data.lend_money_1}}</td>
+                <td>{{data.person_name_borrow_1}}</td>
+                <td>{{data.borrow_money_1}}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>{{data.person_name_lend_2}}</td>
+                <td>{{data.lend_money_2}}</td>
+                <td>{{data.person_name_borrow_2}}</td>
+                <td>{{data.borrow_money_2}}</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>{{data.person_name_lend_3}}</td>
+                <td>{{data.lend_money_3}}</td>
+                <td>{{data.person_name_borrow_3}}</td>
+                <td>{{data.borrow_money_3}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <small>
+        <p>Total lendings : {{data.total_lend}} rupees</p>
+        <p>Total borrowings : {{data.total_borrow}} rupees</p>
+    </small>
+</div>
+<br>
+<div class="container">
+    <h5>Bank Balance</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">sl no</th>
+                <th scope="col">name of Bank</th>
+                <th scope="col">Bank balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{data.bank_name_1}}</td>
+                <td>{{data.bank_balance_1}}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>{{data.bank_name_2}}</td>
+                <td>{{data.bank_balance_2}}</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>{{data.bank_name_3}}</td>
+                <td>{{data.bank_balance_3}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <small>
+        <p>Total Balance : {{data.total_bank_balance}} rupees</p>
+        <p>Cash in Hand : {{data.hand_balance}} rupees</p>
+        <p>Demat account: {{data.demat_balance}} rupees</p>
+    </small>
+    <hr>
+</div>
+<div class="container">
+    <div class="float">
+        <div class="row">
+          <div class="col-3">
+            <h5><b>overall audit</b></h5>
+            <hr>
+            <p id="total">Total investment : {{data.total_investment}} rupees</p>
+            <br>
+            <p id="total">Total return : {{data.total_return}} rupees</p>
+            <br>
+            <p id="total">Total profit : {{data.total_profit}} rupees</p>
+          </div>
+          <div class="col-3"></div>
+          <div class="col-3"></div>
+          <div class="col-3">
+            <img id="signature" src="{% static 'images/signature.jpg' %}" alt="signature">
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
